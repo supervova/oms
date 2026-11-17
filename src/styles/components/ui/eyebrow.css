@@ -1,0 +1,19 @@
+@layer components.ui {
+  .eyebrow {
+    color: var(--color-text-brand);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--size-1);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-base);
+  }
+
+  @scope (.eyebrow) {
+    svg {
+      flex-shrink: 0;
+      width: var(--size-2h);
+      height: var(--size-2h);
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@layer components.custom {
+  .logo {
+    color: var(--color-text);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--size-1);
+    text-decoration: none;
+  }
+
+  @scope (.logo) {
+    svg {
+      background: var(--color-brand);
+      border-radius: var(--radius-pill);
+      color: #fff;
+      flex-shrink: 0;
+      padding: 7px;
+      width: var(--size-4);
+      height: var(--size-4);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-name {
+      font-family: var(--font-family-titles);
+      font-size: var(--font-size-base);
+      letter-spacing: var(--letter-spacing-caps);
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .logo-tagline {
+      color: var(--color-text-02);
+      font-size: 8px;
+      letter-spacing: var(--letter-spacing-caps);
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+  }
+}

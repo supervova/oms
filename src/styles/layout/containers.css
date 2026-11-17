@@ -1,0 +1,8 @@
+@layer layout {
+  .container {
+    margin-inline: auto;
+    padding-inline: var(--padding-x-xl);
+    width: 100%;
+    max-width: var(--width-container);
+  }
+}

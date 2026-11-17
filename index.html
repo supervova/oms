@@ -1,0 +1,506 @@
+<!doctype html>
+<!-- <html lang="sr-Latn" data-theme="dark"> -->
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <title>Oh My Shine! — декор одежды стразами</title>
+  <meta name="description" content="{{ desc }}">
+
+  <link rel="canonical" href="{{ url }}/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Oh My Shine! — декор одежды стразами">
+  <meta property="og:description" content="{{ desc }}">
+  <meta property="og:url" content="{{ url }}/">
+  <meta property="og:image" content="{{ url }}/assets/img/cover.png">
+  <meta property="og:image:alt" content="Oh My Shine! — декор одежды стразами">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="hsl(11 11% 8%)">
+
+  <link rel="author" href="/humans.txt">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+
+  <link rel="preload" href="/assets/fonts/noto-serif-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "{{ url }}/#organization",
+          "name": "Oh My Shine!",
+          "url": "{{ url }}/",
+          "logo": "{{ url }}/icon-192.png",
+          "contactPoint": [
+            { "@type": "ContactPoint", "telephone": "+382 68 769212", "email": "sofia.lagaeva@gmail.com" },
+          ]
+        }
+      ]
+    }
+  </script>
+</head>
+<body>
+  <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+    <symbol id="icon-star" viewBox="0 0 24 24">
+      <path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    </symbol>
+  </svg>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="./" aria-label="Oh My Shine!">
+        <svg class="logo-mark" width="32" height="32" aria-hidden="true"><use href="#icon-star"></svg>
+        <span class="logo-text">
+          <span class="logo-name">Oh My Shine!</span>
+          <span class="logo-tagline">Декор одежды стразами</span>
+        </span>
+      </a>
+      <nav class="header-nav" aria-label="Основная навигация">
+        <a href="#collection">Коллекция</a>
+        <a href="#order">На заказ</a>
+        <a href="#master">Мастер</a>
+      </nav>
+      <button class="header-lang" type="button" aria-label="Язык: русский">
+        <span aria-hidden="true">A文</span>
+        RU
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <img class="hero-media" src="https://placehold.co/1440x960/3a2a26/e8d8d0?text=Hero" alt="Девушка в джинсовой куртке с декором из страз" width="1440" height="960" fetchpriority="high">
+        <div class="hero-card">
+          <p class="eyebrow">
+            <svg width="20" height="20" aria-hidden="true"><use href="#icon-star"></svg>
+            Украшение стразами
+          </p>
+          <h1 id="hero-title">Блестяще, <span class="hero-accent">милая</span></h1>
+          <p>Одежда и аксессуары с авторским декором из страз. Созданы вручную, чтобы подчеркнуть твою индивидуальность.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#collection">Выбрать из коллекции</a>
+            <a class="btn btn-ghost" href="#order" data-modal-open="order-custom">Украсить свою вещь</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="collection" id="collection" aria-labelledby="collection-title">
+      <div class="container">
+        <header class="collection-head">
+          <p class="eyebrow">
+            <svg width="20" height="20" aria-hidden="true"><use href="#icon-star"></svg>
+            Коллекция
+          </p>
+          <h2 id="collection-title">Стразы&nbsp;– лучшие друзья девушки</h2>
+          <p>Коллекция небольшая, но блестящая. Выберите вещь и мастер сделает индивидуальный заказ. Каждая вещь создаётся после согласования деталей. Итоговая стоимость зависит от основы и сложности декора.</p>
+        </header>
+
+        <ul class="collection-grid" role="list">
+          <li class="collection-photo"><img src="https://placehold.co/720x1080/2b2220/c8b8b0?text=Photo+1" alt="Девушка на велосипеде в чёрной футболке" width="720" height="1080" loading="lazy"></li>
+          <li class="collection-product">
+            <img src="https://placehold.co/720x720/2b2220/c8b8b0?text=Bag" alt="Чёрный хлопковый шопер с рассыпью страз" width="720" height="720" loading="lazy">
+            <div class="collection-card">
+              <p class="collection-label">Изготавливается на заказ</p>
+              <h3>«Созвездие». Хлопковый шопер с россыпью страз</h3>
+              <a href="#order" data-modal-open="order-collection" data-product="«Созвездие». Шопер">Купить – от 39 €</a>
+            </div>
+          </li>
+          <li class="collection-photo"><img src="https://placehold.co/720x1080/2b2220/c8b8b0?text=Photo+2" alt="Девушка в светлом костюме с зонтом" width="720" height="1080" loading="lazy"></li>
+          <li class="collection-product">
+            <img src="https://placehold.co/720x720/2b2220/c8b8b0?text=T-shirt" alt="Чёрная футболка на плечиках" width="720" height="720" loading="lazy">
+            <div class="collection-card">
+              <p class="collection-label">Изготавливается на заказ</p>
+              <h3>Футболка «Искра». Свободный силуэт и сияющая линия плеча</h3>
+              <a href="#order" data-modal-open="order-collection" data-product="Футболка «Искра»">Купить – от 45 €</a>
+            </div>
+          </li>
+          <li class="collection-photo"><img src="https://placehold.co/720x1080/2b2220/c8b8b0?text=Photo+3" alt="Девушка с чёрным шопером" width="720" height="1080" loading="lazy"></li>
+          <li class="collection-product">
+            <img src="https://placehold.co/720x720/2b2220/c8b8b0?text=Scarf" alt="Чёрный платок со стразами" width="720" height="720" loading="lazy">
+            <div class="collection-card">
+              <p class="collection-label">Изготавливается на заказ</p>
+              <h3>«После полуночи». Платок для особенного настроения</h3>
+              <a href="#order" data-modal-open="order-collection" data-product="Платок «После полуночи»">Купить – от 24 €</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="order" id="order" aria-labelledby="order-title">
+      <div class="container order-inner">
+        <div class="order-text">
+          <p class="eyebrow">
+            <svg width="20" height="20" aria-hidden="true"><use href="#icon-star"></svg>
+            На заказ
+          </p>
+          <h2 id="order-title">Есть своя идея? Давайте сделаем</h2>
+          <p>Любимая куртка, джинсы или футболка уже есть? Украсим твою вещь. Пришли фото основы и расскажи, какое настроение хочется передать.</p>
+          <a class="btn btn-primary" href="#contacts" data-modal-open="order-custom">Обсудить заказ</a>
+          <p class="order-steps">Идея → эскиз и стоимость → ручной декор</p>
+        </div>
+
+        <div class="compare">
+          <img class="compare-after" src="https://placehold.co/640x800/4a3a30/e8d8d0?text=After" alt="Джинсовый костюм после декора" width="640" height="800" loading="lazy">
+          <img class="compare-before" src="https://placehold.co/640x800/2f3a46/c8d0d8?text=Before" alt="Джинсовый костюм до декора" width="640" height="800" loading="lazy">
+          <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Сравнить до и после">
+          <span class="compare-label compare-label-before" aria-hidden="true">До</span>
+          <span class="compare-label compare-label-after" aria-hidden="true">После</span>
+          <span class="compare-handle" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="master" id="master" aria-labelledby="master-title">
+      <div class="container master-inner">
+        <div class="master-text">
+          <h2 id="master-title">Знакомьтесь<br>с мастером&nbsp;– Софья</h2>
+          <p class="master-lead">Ваша вещь&nbsp;– это её ручная работа</p>
+          <p class="master-lead">Каждая деталь продумана</p>
+        </div>
+        <figure class="master-figure">
+          <img src="https://placehold.co/720x800/2b2220/c8b8b0?text=Master" alt="Мастер Софья за работой над декором" width="720" height="800" loading="lazy">
+          <figcaption class="master-note">
+            <svg class="master-star" width="32" height="32" aria-hidden="true"><use href="#icon-star"></svg>
+            Софья вручную выкладывает каждый рисунок, подбирает ритм и расположение страз. Здесь важен не только блеск, но и то, как декор живёт вместе с вещью. Так делается твоя история через твой текстиль.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="notes" aria-labelledby="notes-title">
+      <img class="notes-bg" src="https://placehold.co/1920x900/1e1715/3a2a26?text=Workshop" alt="" width="1920" height="900" loading="lazy">
+      <div class="container notes-inner">
+        <p class="eyebrow">
+          <svg width="20" height="20" aria-hidden="true"><use href="#icon-star"></svg>
+          Что важно знать
+        </p>
+        <h2 id="notes-title">Мы заботимся о твоих вещах</h2>
+        <ol class="notes-list" role="list">
+          <li>
+            <p class="notes-num">01 / Доставка</p>
+            <h3>Бережно упакуем</h3>
+            <p>Способ, стоимость и сроки доставки согласуем до оформления. Для вещи на заказ отдельно обсудим время изготовления.</p>
+          </li>
+          <li>
+            <p class="notes-num">02 / Уход</p>
+            <h3>Чтобы блеск оставался</h3>
+            <p>Бережная ручная стирка с изнанки, без замачивания и трения декора. Не гладь стразы; следуй памятке для своей вещи.</p>
+          </li>
+          <li>
+            <p class="notes-num">03 / Индивидуальный заказ</p>
+            <h3>Сначала — диалог</h3>
+            <p>Обсудим основу, рисунок и бюджет. До начала работы согласуем детали, сроки и условия заказа.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <img class="cta-bg" src="https://placehold.co/1920x900/1a1726/3a3050?text=Nebula" alt="" width="1920" height="900" loading="lazy">
+      <div class="container cta-inner">
+        <svg class="cta-star" width="48" height="48" aria-hidden="true"><use href="#icon-star"></svg>
+        <p class="cta-label">Шик, блеск, красота</p>
+        <h2 id="cta-title">Звезда должна сиять</h2>
+        <p>Не жди особого случая. Сделай особенным каждый день.</p>
+        <a class="btn btn-primary" href="#contacts" data-modal-open="order-custom">Заказать украшение своей вещи</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacts">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a class="logo" href="./" aria-label="Oh My Shine!">
+          <svg class="logo-mark" width="32" height="32" aria-hidden="true"><use href="#icon-star"></svg>
+          <span class="logo-text">
+            <span class="logo-name">Oh My Shine!</span>
+            <span class="logo-tagline">Декор одежды стразами</span>
+          </span>
+        </a>
+        <ul class="footer-lang" role="list">
+          <li><a href="#" hreflang="sr">SR</a></li>
+          <li><a href="#" hreflang="ru" aria-current="true">RU</a></li>
+          <li><a href="#" hreflang="en">EN</a></li>
+        </ul>
+      </div>
+      <ul class="footer-nav footer-nav-start" role="list">
+        <li><a href="#">Доставка и возврат</a></li>
+        <li><a href="#">Уход за вещами</a></li>
+        <li><a href="#contacts" data-modal-open="contact">Контакты</a></li>
+      </ul>
+      <ul class="footer-nav footer-nav-end" role="list">
+        <li><a href="#">Конфиденциальность</a></li>
+        <li><a href="#">Уход за вещами</a></li>
+        <li>© Oh My Shine!</li>
+      </ul>
+    </div>
+  </footer>
+
+  <dialog class="modal" id="modal-order-collection" aria-labelledby="order-collection-title">
+    <img class="modal-bg" src="https://placehold.co/1200x480/1a1726/3a3050?text=Nebula" alt="" width="1200" height="480">
+    <button class="modal-close" type="button" aria-label="Закрыть" data-modal-close>
+      <svg width="20" height="20" aria-hidden="true"><use href="#icon-close"></svg>
+    </button>
+
+    <h2 class="modal-title" id="order-collection-title">Заказ из коллекции</h2>
+
+    <form class="form" method="post" action="/api/request" novalidate>
+      <input type="hidden" name="form_type" value="order-collection">
+
+      <div class="field">
+        <select id="order-collection-product" name="product" required>
+          <option value="Футболка «Искра»" data-sizes="XS,S,M,L,XL" selected>Футболка «Искра»</option>
+          <option value="«Созвездие». Шопер">«Созвездие». Шопер</option>
+          <option value="Платок «После полуночи»">Платок «После полуночи»</option>
+        </select>
+        <label class="field-label" for="order-collection-product">Изделие *</label>
+      </div>
+
+      <div class="field">
+        <select id="order-collection-size" name="size" required>
+          <option value="" disabled hidden selected></option>
+        </select>
+        <label class="field-label" for="order-collection-size">Размер *</label>
+      </div>
+
+      <div class="field">
+        <input id="order-collection-city" name="city" type="text" autocomplete="address-level2" placeholder=" " required>
+        <label class="field-label" for="order-collection-city">Город доставки *</label>
+      </div>
+
+      <div class="field">
+        <input id="order-collection-name" name="name" type="text" autocomplete="name" placeholder=" " required>
+        <label class="field-label" for="order-collection-name">Имя и фамилия *</label>
+      </div>
+
+      <div class="field">
+        <input id="order-collection-contact" name="contact" type="text" autocomplete="off" placeholder=" " aria-describedby="order-collection-contact-hint" required>
+        <label class="field-label" for="order-collection-contact">Как с тобой связаться? *</label>
+        <p class="field-hint" id="order-collection-contact-hint">Telegram, WhatsApp, Viber, Instagram или e-mail</p>
+      </div>
+
+      <div class="field">
+        <label class="checkbox">
+          <input type="checkbox" name="consent" id="order-collection-consent" required>
+          <span>Принимаю условия <a href="/privacy/" target="_blank" rel="noopener">политики конфиденциальности</a></span>
+        </label>
+      </div>
+
+      <div class="form-trap" aria-hidden="true">
+        <input type="text" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <p class="form-error" role="alert" hidden>Не удалось отправить заявку. Попробуй ещё раз.</p>
+
+      <button class="btn btn-primary form-submit" type="submit">Заказать</button>
+    </form>
+
+    <div class="modal-success" hidden>
+      <p class="modal-success-title" tabindex="-1">Заявка отправлена</p>
+      <p>Спасибо! Мы свяжемся с тобой в выбранном мессенджере или по почте.</p>
+      <button class="btn btn-primary" type="button" data-modal-close>Закрыть</button>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-order-custom" aria-labelledby="order-custom-title">
+    <img class="modal-bg" src="https://placehold.co/1200x480/1a1726/3a3050?text=Nebula" alt="" width="1200" height="480">
+    <button class="modal-close" type="button" aria-label="Закрыть" data-modal-close>
+      <svg width="20" height="20" aria-hidden="true"><use href="#icon-close"></svg>
+    </button>
+
+    <h2 class="modal-title" id="order-custom-title">Декор на заказ</h2>
+
+    <form class="form" method="post" action="/api/request" enctype="multipart/form-data" novalidate>
+      <input type="hidden" name="form_type" value="order-custom">
+
+      <div class="field">
+        <select id="order-custom-item" name="item" required>
+          <option value="" disabled hidden selected></option>
+          <option value="Куртка">Куртка</option>
+          <option value="Джинсы">Джинсы</option>
+          <option value="Футболка">Футболка</option>
+          <option value="Сумка">Сумка</option>
+          <option value="Другое">Другое</option>
+        </select>
+        <label class="field-label" for="order-custom-item">Что украшаем *</label>
+      </div>
+      <fieldset class="field">
+        <legend class="field-legend">Основа</legend>
+        <div class="field-choices">
+          <label class="checkbox">
+            <input type="radio" name="base" value="Своя вещь" checked>
+            <span>Своя вещь</span>
+          </label>
+          <label class="checkbox">
+            <input type="radio" name="base" value="Нужна основа от мастера">
+            <span>Нужна основа от мастера</span>
+          </label>
+        </div>
+      </fieldset>
+      <div class="field" data-visible-when="base=Своя вещь">
+        <input id="order-custom-photos" name="photos" type="file" accept="image/*,.heic,.heif" multiple hidden data-max-files="5" data-max-size="10" data-error="Прикрепи фото вещи" required>
+        <button class="field-pick" type="button" id="order-custom-photos-pick" aria-describedby="order-custom-photos-hint"></button>
+        <label class="field-label" for="order-custom-photos-pick">Фото основы *</label>
+        <p class="field-hint" id="order-custom-photos-hint">До 5 фото: JPG, PNG или HEIC</p>
+        <ul class="field-files" role="list" aria-live="polite"></ul>
+      </div>
+      <div class="field">
+        <textarea id="order-custom-idea" name="idea" rows="4" placeholder=" " required></textarea>
+        <label class="field-label" for="order-custom-idea">Идея и настроение *</label>
+      </div>
+      <div class="field">
+        <input id="order-custom-refs" name="references" type="file" accept="image/*,.heic,.heif" multiple hidden data-max-files="5" data-max-size="10">
+        <button class="field-pick" type="button" id="order-custom-refs-pick" aria-describedby="order-custom-refs-hint"></button>
+        <label class="field-label" for="order-custom-refs-pick">Референсы</label>
+        <p class="field-hint" id="order-custom-refs-hint">Необязательно. Ссылки можно добавить в описание идеи</p>
+        <ul class="field-files" role="list" aria-live="polite"></ul>
+      </div>
+      <fieldset class="field">
+        <legend class="field-legend">Где разместить декор</legend>
+        <div class="field-choices">
+          <label class="checkbox">
+            <input type="checkbox" name="placement" value="Воротник">
+            <span>Воротник</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="placement" value="Плечо">
+            <span>Плечо</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="placement" value="Карманы">
+            <span>Карманы</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="placement" value="Спина">
+            <span>Спина</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="placement" value="Вся вещь">
+            <span>Вся вещь</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="placement" value="Пока не знаю">
+            <span>Пока не знаю</span>
+          </label>
+        </div>
+      </fieldset>
+      <div class="field">
+        <input id="order-custom-budget" name="budget" type="text" autocomplete="off" placeholder=" ">
+        <label class="field-label" for="order-custom-budget">Бюджет</label>
+      </div>
+      <div class="field">
+        <input id="order-custom-term" name="term" type="text" autocomplete="off" placeholder=" ">
+        <label class="field-label" for="order-custom-term">Желаемый срок</label>
+      </div>
+      <div class="field">
+        <input id="order-custom-city" name="city" type="text" autocomplete="address-level2" placeholder=" " required>
+        <label class="field-label" for="order-custom-city">Город доставки *</label>
+      </div>
+      <div class="field">
+        <input id="order-custom-name" name="name" type="text" autocomplete="name" placeholder=" " required>
+        <label class="field-label" for="order-custom-name">Имя и фамилия *</label>
+      </div>
+      <div class="field">
+        <input id="order-custom-contact" name="contact" type="text" autocomplete="off" placeholder=" " aria-describedby="order-custom-contact-hint" required>
+        <label class="field-label" for="order-custom-contact">Как с тобой связаться? *</label>
+        <p class="field-hint" id="order-custom-contact-hint">Telegram, WhatsApp, Viber, Instagram или e-mail</p>
+      </div>
+      <div class="field">
+        <label class="checkbox">
+          <input type="checkbox" name="consent" id="order-custom-consent" required>
+          <span>Принимаю условия <a href="/privacy/" target="_blank" rel="noopener">политики конфиденциальности</a></span>
+        </label>
+      </div>
+
+      <div class="form-trap" aria-hidden="true">
+        <input type="text" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <p class="form-error" role="alert" hidden>Не удалось отправить заявку. Попробуй ещё раз.</p>
+
+      <button class="btn btn-primary form-submit" type="submit">Отправить</button>
+    </form>
+
+    <div class="modal-success" hidden>
+      <p class="modal-success-title" tabindex="-1">Заявка отправлена</p>
+      <p>Спасибо! Мы посмотрим идею и свяжемся с тобой в выбранном мессенджере или по почте.</p>
+      <button class="btn btn-primary" type="button" data-modal-close>Закрыть</button>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-contact" aria-labelledby="contact-title">
+    <img class="modal-bg" src="https://placehold.co/1200x480/1a1726/3a3050?text=Nebula" alt="" width="1200" height="480">
+    <button class="modal-close" type="button" aria-label="Закрыть" data-modal-close>
+      <svg width="20" height="20" aria-hidden="true"><use href="#icon-close"></svg>
+    </button>
+
+    <h2 class="modal-title" id="contact-title">Написать нам</h2>
+
+    <form class="form" method="post" action="/api/request" enctype="multipart/form-data" novalidate>
+      <input type="hidden" name="form_type" value="contact">
+
+      <div class="field">
+        <select id="contact-topic" name="topic" required>
+          <option value="" disabled hidden selected></option>
+          <option value="Вопрос по заказу">Вопрос по заказу</option>
+          <option value="Доставка и возврат">Доставка и возврат</option>
+          <option value="Уход за вещами">Уход за вещами</option>
+          <option value="Сотрудничество">Сотрудничество</option>
+          <option value="Другое">Другое</option>
+        </select>
+        <label class="field-label" for="contact-topic">Тема *</label>
+      </div>
+      <div class="field" data-visible-when="topic=Вопрос по заказу">
+        <input id="contact-order" name="order_number" type="text" autocomplete="off" placeholder=" ">
+        <label class="field-label" for="contact-order">Номер заказа</label>
+      </div>
+      <div class="field">
+        <textarea id="contact-message" name="message" rows="4" placeholder=" " required></textarea>
+        <label class="field-label" for="contact-message">Сообщение *</label>
+      </div>
+      <div class="field">
+        <input id="contact-name" name="name" type="text" autocomplete="name" placeholder=" " required>
+        <label class="field-label" for="contact-name">Имя *</label>
+      </div>
+      <div class="field">
+        <input id="contact-contact" name="contact" type="text" autocomplete="off" placeholder=" " aria-describedby="contact-contact-hint" required>
+        <label class="field-label" for="contact-contact">Как с тобой связаться? *</label>
+        <p class="field-hint" id="contact-contact-hint">Telegram, WhatsApp, Viber, Instagram или e-mail</p>
+      </div>
+      <div class="field">
+        <label class="checkbox">
+          <input type="checkbox" name="consent" id="contact-consent" required>
+          <span>Принимаю условия <a href="/privacy/" target="_blank" rel="noopener">политики конфиденциальности</a></span>
+        </label>
+      </div>
+
+      <div class="form-trap" aria-hidden="true">
+        <input type="text" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <p class="form-error" role="alert" hidden>Не удалось отправить сообщение. Попробуй ещё раз.</p>
+
+      <button class="btn btn-primary form-submit" type="submit">Отправить</button>
+    </form>
+
+    <div class="modal-success" hidden>
+      <p class="modal-success-title" tabindex="-1">Сообщение отправлено</p>
+      <p>Спасибо! Мы ответим в выбранном мессенджере или по почте.</p>
+      <button class="btn btn-primary" type="button" data-modal-close>Закрыть</button>
+    </div>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,53 @@
+@layer components.ui {
+  .btn {
+    --btn-bg: color-mix(in srgb, var(--color-text) 10%, transparent);
+    --btn-color: var(--color-text);
+    --btn-radius: var(--radius-sm);
+
+    background: var(--btn-bg);
+    border: 0;
+    border-radius: var(--btn-radius);
+    color: var(--btn-color);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    filter: none;
+    font-size: var(--font-size-caption);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-caps);
+    line-height: var(--line-height-caption);
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-left: var(--button-padding-x-start);
+    padding-right: var(--button-padding-x-end);
+    transition: filter var(--duration-base) var(--easing-base);
+    min-height: var(--button-height);
+
+    @media (any-hover: hover) {
+      &:hover {
+        filter: var(--filter-brightness-up);
+      }
+    }
+
+    &:active {
+      filter: var(--filter-brightness-down);
+    }
+
+    &:disabled,
+    &.is-disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  .btn-primary {
+    --btn-bg: var(--color-brand);
+    --btn-color: #fff;
+  }
+
+  .btn-ghost {
+    --btn-bg: color-mix(in srgb, var(--color-text) 10%, transparent);
+  }
+}

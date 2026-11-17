@@ -1,0 +1,47 @@
+@layer components.form {
+  /*
+   * <div class="quantity" data-quantity>
+   *   <button type="button" data-dec aria-label="…">…</button>
+   *   <input type="number" data-input />
+   *   <button type="button" data-inc aria-label="…">…</button>
+   * </div>
+   */
+  .quantity {
+    --q-height: var(--size-4);
+    --q-width: 44px;
+
+    background: var(--color-fill);
+    border-radius: var(--radius-base);
+    display: inline-grid;
+    align-items: center;
+    grid-template-columns: var(--q-height) var(--q-width) var(--q-height);
+  }
+
+  @scope (.quantity) {
+    button {
+      --button-bg: transparent;
+      --button-bg-hover: var(--color-fill);
+      --button-color: var(--color-text-03);
+      --button-height: 100%;
+
+      display: grid;
+      place-items: center;
+      padding: 0;
+    }
+
+    input {
+      appearance: textfield;
+      background: transparent;
+      border: 0;
+      color: var(--color-text);
+      text-align: center;
+      width: 100%;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        appearance: none;
+        margin: 0;
+      }
+    }
+  }
+}

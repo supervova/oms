@@ -1,0 +1,19 @@
+@layer content {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-family-titles);
+  }
+
+  h1 {
+    @mixin text-format display;
+  }
+
+  h2 {
+    @mixin text-format title;
+  }
+
+  h3 {
+    @mixin text-format h3;
+  }
+}

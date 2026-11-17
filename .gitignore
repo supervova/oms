@@ -1,0 +1,79 @@
+# -------------------------------
+# Working stuff
+# -------------------------------
+
+*.tmp
+*~.*
+.agents/
+.obsidian/
+.vault-nickname
+docs/notes/
+
+# -------------------------------
+# Build / runtime
+# -------------------------------
+.cache/
+.eslintcache
+.tmp/
+dist/
+/public/assets/icons/sprite.svg
+/public/assets/img/
+/public/assets/css/
+
+# -------------------------------
+# Package managers
+# -------------------------------
+*.tgz
+.pnpm-store/
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+
+# -------------------------------
+# Environment variables
+# -------------------------------
+.env
+.env.*
+!.env.example
+
+# -------------------------------
+# Logs / backups
+# -------------------------------
+*.bak
+*.log
+*.swp
+.stylelintcache
+backup/
+logs/
+
+# -------------------------------
+# Editors / IDE
+# -------------------------------
+.vscode/
+
+# -------------------------------
+# Test artifacts
+# -------------------------------
+output/
+playwright-report/
+test-results/
+blob-report/
+coverage/
+.nyc_output/
+
+# -------------------------------
+# OS / system files
+# -------------------------------
+$RECYCLE.BIN/
+.DS_Store
+.DocumentRevisions-V100
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+._*
+.com.apple.timemachine.donotpresent
+.fseventsd
+Desktop.ini
+Thumbs.db
+ehthumbs.db

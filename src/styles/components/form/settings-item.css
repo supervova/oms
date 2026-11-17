@@ -1,0 +1,62 @@
+@layer components.form {
+  /*
+  <div class="settings-item">
+    <svg class="icon">...</svg>
+    <label for="foo">...</label>
+    <input id="foo" type="checkbox" role="switch" />
+  </div>
+  */
+
+  .settings-item {
+    --form-item-padding-y: var(--size-1);
+    --form-item-gap: var(--size-2);
+
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    gap: var(--form-item-gap);
+    padding-block: var(--form-item-padding-y);
+  }
+
+  @scope (.settings-item) {
+    label {
+      flex-grow: 1;
+    }
+
+    /* #region: 2-line label: label > (strong + span) */
+    strong {
+      color: var(--color-text);
+      display: block;
+      margin-bottom: -4px;
+    }
+
+    span {
+      @mixin text-format caption;
+
+      display: block;
+    }
+
+    /* #endregion */
+
+    select,
+    [type='radio'],
+    [role='switch'] {
+      order: 1;
+    }
+
+    select {
+      background-color: transparent;
+      background-image: var(--icon-chevron-up-down);
+      color: var(--color-text-brand);
+      padding-block: 0;
+      padding-inline-end: var(--size-4);
+      text-align: end;
+      width: auto;
+      min-height: auto;
+    }
+
+    input {
+      width: var(--width, auto);
+    }
+  }
+}

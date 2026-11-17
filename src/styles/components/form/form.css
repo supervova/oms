@@ -1,0 +1,317 @@
+@layer components.form {
+  /* -------------------------------------------------------------------------- */
+  /* #region: FORM                                                              */
+  /* -------------------------------------------------------------------------- */
+
+  .form {
+    --btn-radius: var(--radius-md);
+    --button-height: var(--size-7);
+    --button-padding-x-end: var(--size-3);
+    --button-padding-x-start: var(--size-3);
+
+    display: grid;
+    gap: var(--size-2);
+
+    &.is-loading {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+  }
+
+  @scope (.form) {
+    .form-trap {
+      @mixin visually-hidden;
+    }
+
+    .form-submit {
+      justify-self: start;
+      margin-top: var(--size-1);
+    }
+
+    .form-error {
+      color: var(--color-text-negative);
+      font-size: var(--font-size-body-sm);
+      line-height: var(--line-height-body-sm);
+
+      &[hidden] {
+        display: none;
+      }
+    }
+  }
+
+  /* #endregion */
+
+  /* -------------------------------------------------------------------------- */
+  /* #region: FIELD                                                             */
+  /* -------------------------------------------------------------------------- */
+
+  .field {
+    --field-accent: var(--color-text-brand);
+    --field-bg: var(--modal-bg, var(--color-bg));
+    --field-border: color-mix(in srgb, var(--color-text) 25%, transparent);
+    --field-height: var(--size-7);
+
+    border: 0;
+    display: grid;
+    gap: var(--size-1);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-width: 0;
+
+    &.is-invalid {
+      --field-accent: var(--color-text-negative);
+      --field-border: var(--color-negative);
+    }
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  @scope (.field) {
+    input,
+    select,
+    textarea {
+      appearance: none;
+      background-color: transparent;
+      border: var(--border-width) solid var(--field-border);
+      border-radius: var(--radius-xs);
+      color: var(--color-text);
+      display: block;
+      padding-left: var(--input-padding-x);
+      padding-right: var(--input-padding-x);
+      transition: border-color var(--duration-base) var(--easing-base);
+      width: 100%;
+      height: var(--field-height);
+
+      &:focus {
+        border-color: var(--color-brand);
+      }
+    }
+
+    textarea {
+      padding-top: var(--size-2);
+      padding-bottom: var(--size-2);
+      resize: vertical;
+      height: auto;
+      min-height: calc(var(--size-1) * 15);
+    }
+
+    input[hidden] {
+      display: none;
+    }
+
+    select {
+      background-image: var(--icon-chevron-down);
+      background-position: right var(--size-2) center;
+      background-repeat: no-repeat;
+      padding-right: var(--size-6);
+    }
+
+    /* Floating label: sits on the border once the control is filled or focused */
+    .field-label {
+      background: transparent;
+      color: var(--color-text-02);
+      left: var(--size-1h);
+      line-height: 1;
+      padding-left: var(--size-half);
+      padding-right: var(--size-half);
+      pointer-events: none;
+      position: absolute;
+      top: calc(var(--field-height) / 2);
+      transition:
+        color var(--duration-base) var(--easing-base),
+        font-size var(--duration-base) var(--easing-base),
+        top var(--duration-base) var(--easing-base);
+      translate: 0 -50%;
+    }
+
+    input:focus + .field-label,
+    input:not(:placeholder-shown) + .field-label,
+    textarea:focus + .field-label,
+    textarea:not(:placeholder-shown) + .field-label,
+    select:focus + .field-label,
+    select:valid + .field-label,
+    :scope.has-files .field-label {
+      background: var(--field-bg);
+      color: var(--field-accent);
+      font-size: var(--font-size-caption);
+      top: 0;
+    }
+
+    .field-hint,
+    .field-error {
+      font-size: var(--font-size-caption);
+      letter-spacing: var(--letter-spacing-caption);
+      line-height: var(--line-height-caption);
+      padding-left: var(--size-1h);
+      padding-right: var(--size-1h);
+    }
+
+    .field-hint {
+      color: var(--color-text-02);
+    }
+
+    .field-error {
+      color: var(--color-text-negative);
+    }
+
+    /* Group label for radio and checkbox sets */
+    .field-legend {
+      color: var(--color-text-02);
+      font-size: var(--font-size-caption);
+      letter-spacing: var(--letter-spacing-caption);
+      line-height: var(--line-height-caption);
+      margin-bottom: var(--size-1);
+      padding-left: var(--size-1h);
+      padding-right: var(--size-1h);
+    }
+
+    .field-choices {
+      display: grid;
+      gap: var(--size-1h) var(--size-2);
+      grid-template-columns: repeat(auto-fill, minmax(144px, 1fr));
+      padding-left: var(--size-1h);
+      padding-right: var(--size-1h);
+    }
+
+    /* File picker: a button styled as a field, the native input stays hidden */
+    .field-pick {
+      appearance: none;
+      background-color: transparent;
+      border: var(--border-width) solid var(--field-border);
+      border-radius: var(--radius-xs);
+      color: var(--color-text-02);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-left: var(--input-padding-x);
+      padding-right: var(--input-padding-x);
+      transition: border-color var(--duration-base) var(--easing-base);
+      width: 100%;
+      height: var(--field-height);
+
+      &:focus {
+        border-color: var(--color-brand);
+      }
+
+      &::after {
+        content: '';
+        background:
+          linear-gradient(currentColor, currentColor) center / 16px 2px no-repeat,
+          linear-gradient(currentColor, currentColor) center / 2px 16px no-repeat;
+        width: var(--size-3);
+        height: var(--size-3);
+      }
+    }
+
+    .field-files {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--size-1);
+      padding: 0;
+
+      &:empty {
+        display: none;
+      }
+
+      li {
+        background: color-mix(in srgb, var(--color-text) 10%, transparent);
+        border-radius: var(--radius-pill);
+        display: inline-flex;
+        align-items: center;
+        gap: var(--size-half);
+        font-size: var(--font-size-body-sm);
+        line-height: var(--line-height-body-sm);
+        padding: var(--size-half) var(--size-half) var(--size-half) var(--size-1h);
+        max-width: 100%;
+      }
+
+      span {
+        @mixin text-truncate;
+      }
+
+      button {
+        background: transparent;
+        border: 0;
+        border-radius: var(--radius-pill);
+        color: var(--color-text-02);
+        cursor: pointer;
+        flex-shrink: 0;
+        font-size: var(--font-size-base);
+        line-height: 1;
+        width: var(--size-3);
+        height: var(--size-3);
+
+        @media (any-hover: hover) {
+          &:hover {
+            color: var(--color-text);
+          }
+        }
+      }
+    }
+  }
+
+  /* #endregion */
+
+  /* -------------------------------------------------------------------------- */
+  /* #region: CHECKBOX                                                          */
+  /* -------------------------------------------------------------------------- */
+
+  .checkbox {
+    --icon-check: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23fff%27 stroke-width=%273%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M5 12.5l4.5 4.5L19 7%27/%3E%3C/svg%3E');
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--size-1h);
+    font-size: var(--font-size-body-sm);
+    line-height: var(--line-height-body-sm);
+  }
+
+  @scope (.checkbox) {
+    input {
+      appearance: none;
+      background-color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      border: 2px solid var(--field-border, var(--color-text-03));
+      border-radius: var(--radius-xs);
+      cursor: pointer;
+      flex-shrink: 0;
+      padding: 0;
+      width: var(--size-3);
+      height: var(--size-3);
+
+      &:checked {
+        background-color: var(--color-brand);
+        background-image: var(--icon-check);
+        border-color: var(--color-brand);
+      }
+    }
+
+    input[type='radio'] {
+      border-radius: var(--radius-pill);
+
+      &:checked {
+        background-color: transparent;
+        background-image: radial-gradient(
+          circle,
+          var(--color-brand) 0 40%,
+          transparent calc(40% + 1px)
+        );
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+
+  /* #endregion */
+}

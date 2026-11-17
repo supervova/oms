@@ -1,0 +1,15 @@
+@layer components.form {
+  [type="file"] {
+    /* 1. Prevent focus outline from being clipped by overflow: hidden */
+    background: none;
+    border-radius: 0;
+    border: 0;
+    margin-block: 0 var(--field-flow-gap);
+    margin-inline-start: calc(var(--focus-outline) * -1); /* 1 */
+    padding-inline: var(--focus-outline) 0; /* 1 */
+
+    &::file-selector-button {
+      margin-inline-end: var(--size-2);
+    }
+  }
+}

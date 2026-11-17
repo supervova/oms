@@ -1,0 +1,280 @@
+{
+  "name": "oh-my-shine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "assets:build": "pnpm assets:images && pnpm assets:icons",
+    "assets:icons": "node scripts/build-svg-sprite.js",
+    "assets:images": "node scripts/build-images.js",
+    "build": "vite build",
+    "check": "pnpm lint && pnpm build",
+    "dev": "vite --host 127.0.0.1",
+    "format": "prettier src scripts index.html vite.config.js eslint.config.js package.json --write",
+    "lint": "pnpm lint:js && pnpm lint:css",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint:js": "eslint src scripts eslint.config.js --no-error-on-unmatched-pattern",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard"
+    ],
+    "ignoreFiles": [
+      "src/components/progress/loader.css"
+    ],
+    "rules": {
+      "alpha-value-notation": "number",
+      "at-rule-empty-line-before": null,
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "mixin",
+            "define-mixin"
+          ]
+        }
+      ],
+      "at-rule-no-vendor-prefix": true,
+      "at-rule-prelude-no-invalid": [
+        true,
+        {
+          "ignoreAtRules": [
+            "custom-selector",
+            "mixin",
+            "define-mixin"
+          ]
+        }
+      ],
+      "color-named": "never",
+      "comment-empty-line-before": [
+        "always",
+        {
+          "except": [
+            "first-nested"
+          ],
+          "ignore": [
+            "after-comment",
+            "stylelint-commands"
+          ]
+        }
+      ],
+      "custom-media-pattern": "^[a-z0-9-.]+$",
+      "custom-property-empty-line-before": null,
+      "declaration-block-no-redundant-longhand-properties": [
+        true,
+        {
+          "ignoreShorthands": [
+            "grid-template"
+          ]
+        }
+      ],
+      "declaration-empty-line-before": null,
+      "declaration-no-important": true,
+      "declaration-property-value-no-unknown": [
+        true,
+        {
+          "ignoreProperties": {
+            "/^(top|right|bottom|left|inset(?:-(?:block|inline)(?:-(?:start|end))?)?)$/": [
+              "/^anchor\\(/"
+            ]
+          }
+        }
+      ],
+      "font-family-name-quotes": "always-where-recommended",
+      "font-weight-notation": [
+        "numeric",
+        {
+          "ignore": [
+            "relative"
+          ]
+        }
+      ],
+      "function-no-unknown": [
+        true,
+        {
+          "ignoreFunctions": [
+            "layer"
+          ]
+        }
+      ],
+      "function-url-no-scheme-relative": true,
+      "function-url-quotes": "always",
+      "hue-degree-notation": "number",
+      "layer-name-pattern": "^[a-z0-9-.]+$",
+      "length-zero-no-unit": [
+        true,
+        {
+          "ignore": [
+            "custom-properties"
+          ],
+          "ignoreFunctions": [
+            "var"
+          ]
+        }
+      ],
+      "media-feature-name-no-unknown": [
+        true,
+        {
+          "ignoreMediaFeatureNames": [
+            "prefers-reduced-motion"
+          ]
+        }
+      ],
+      "media-feature-name-no-vendor-prefix": true,
+      "no-descending-specificity": null,
+      "no-duplicate-selectors": true,
+      "no-empty-source": null,
+      "no-invalid-position-declaration": [
+        true,
+        {
+          "ignoreAtRules": [
+            "define-mixin"
+          ]
+        }
+      ],
+      "property-no-unknown": [
+        true,
+        {
+          "ignoreProperties": [
+            "interpolate-size"
+          ]
+        }
+      ],
+      "property-no-vendor-prefix": true,
+      "rule-empty-line-before": null,
+      "selector-attribute-quotes": "always",
+      "selector-class-pattern": [
+        "^[a-z0-9-_\\/:\\[\\]]+$",
+        {
+          "message": "Class names should only contain lowercase letters, numbers, hyphens, underscores (for BEM elements only), and may include brackets, forward slashes for fractions and colons."
+        }
+      ],
+      "selector-max-attribute": 3,
+      "selector-max-class": 4,
+      "selector-max-combinators": 4,
+      "selector-max-compound-selectors": 4,
+      "selector-max-id": 0,
+      "selector-max-specificity": null,
+      "selector-max-universal": 1,
+      "selector-no-qualifying-type": null,
+      "selector-no-vendor-prefix": true,
+      "value-keyword-case": [
+        "lower",
+        {
+          "camelCaseSvgKeywords": true,
+          "ignoreFunctions": [
+            "color-mix"
+          ],
+          "ignoreKeywords": [
+            "Arial",
+            "Baskerville",
+            "BlinkMacSystemFont",
+            "Consolas",
+            "Georgia",
+            "Inter",
+            "Menlo",
+            "Monaco",
+            "Roboto",
+            "SFMono-Regular",
+            "Times"
+          ]
+        }
+      ],
+      "value-no-vendor-prefix": true
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "postcss-import": {},
+      "postcss-mixins": {},
+      "postcss-advanced-variables": {
+        "disable": "@mixin",
+        "unresolved": "ignore"
+      },
+      "postcss-nesting": {},
+      "postcss-custom-media": {},
+      "postcss-preset-env": {
+        "stage": 2,
+        "features": {
+          "custom-properties": false,
+          "custom-selectors": true,
+          "is-pseudo-class": false,
+          "cascade-layers": false,
+          "case-insensitive-attributes": false,
+          "nesting-rules": false
+        }
+      },
+      "postcss-pxtorem": {
+        "rootValue": 16,
+        "propList": [
+          "*",
+          "!border*",
+          "!outline*",
+          "!box-shadow",
+          "!text-shadow",
+          "!filter",
+          "!backdrop-filter",
+          "!stroke*"
+        ],
+        "selectorBlackList": [],
+        "exclude": null,
+        "mediaQuery": false,
+        "minPixelValue": 0
+      },
+      "postcss-calc": {},
+      "postcss-discard-comments": {}
+    }
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "endOfLine": "auto",
+    "jsxSingleQuote": false,
+    "printWidth": 100,
+    "quoteProps": "as-needed",
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "overrides": [
+      {
+        "files": [
+          "*.html"
+        ],
+        "options": {
+          "printWidth": 40000,
+          "bracketSameLine": true
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@fontsource/noto-serif": "^5.3.0",
+    "autoprefixer": "^10.6.2",
+    "eslint": "^10.15.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.13.0",
+    "postcss": "^8.5.30",
+    "postcss-advanced-variables": "^5.0.0",
+    "postcss-calc": "^11.2.3",
+    "postcss-custom-media": "^12.0.3",
+    "postcss-discard-comments": "^9.0.8",
+    "postcss-import": "^17.0.1",
+    "postcss-mixins": "^12.1.2",
+    "postcss-nesting": "^14.0.3",
+    "postcss-preset-env": "^11.6.1",
+    "postcss-pxtorem": "^6.1.0",
+    "prettier": "^3.9.10",
+    "sharp": "^0.35.5",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^41.0.0",
+    "svg-sprite": "^2.0.4",
+    "vite": "^8.3.4"
+  }
+}

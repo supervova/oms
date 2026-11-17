@@ -1,0 +1,67 @@
+@layer components.custom {
+  .header {
+    padding-top: var(--size-3);
+    padding-bottom: var(--size-3);
+
+    @media (--tablet) {
+      padding-top: var(--size-8);
+    }
+  }
+
+  @scope (.header) {
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: var(--gap);
+      justify-content: center;
+
+      @media (--tablet) {
+        justify-content: space-between;
+      }
+    }
+
+    nav {
+      display: none;
+
+      @media (--tablet) {
+        display: flex;
+        flex: 1;
+        justify-content: space-evenly;
+      }
+    }
+
+    a {
+      color: var(--color-text);
+      font-size: var(--font-size-caption);
+      font-weight: var(--font-weight-bold);
+      letter-spacing: var(--letter-spacing-caps);
+      line-height: var(--line-height-caption);
+      text-decoration: none;
+      text-transform: uppercase;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--color-text-brand);
+        }
+      }
+    }
+
+    button {
+      border: 0;
+      border-left: var(--border-width) solid var(--color-border-bold);
+      color: var(--color-text);
+      display: none;
+      font-size: var(--font-size-caption);
+      font-weight: var(--font-weight-bold);
+      letter-spacing: var(--letter-spacing-caps);
+      line-height: var(--line-height-caption);
+      padding-left: var(--size-3);
+
+      @media (--tablet) {
+        align-items: center;
+        display: inline-flex;
+        gap: var(--size-1);
+      }
+    }
+  }
+}

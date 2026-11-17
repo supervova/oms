@@ -1,0 +1,135 @@
+@layer components.ui {
+  /* -------------------------------------------------------------------------- */
+  /* #region: MODAL                                                             */
+  /* -------------------------------------------------------------------------- */
+
+  /* Lock page scroll while a modal is open */
+  html:has(.modal[open]) {
+    overflow: hidden;
+  }
+
+  .modal {
+    --modal-bg: var(--color-bg-z3);
+    --modal-pad-x: var(--size-3);
+
+    background: var(--modal-bg);
+    border: 0;
+    color: var(--color-text);
+    display: block;
+    margin: 0;
+    padding: calc(var(--size-1) * 12) var(--modal-pad-x) var(--size-5);
+    inset: 0;
+    isolation: isolate;
+    opacity: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    position: fixed;
+    transition:
+      display var(--duration-base) allow-discrete,
+      opacity var(--duration-base) var(--easing-base),
+      overlay var(--duration-base) allow-discrete;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+
+    &[open] {
+      opacity: 1;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+
+    &::backdrop {
+      backdrop-filter: var(--backdrop-blur-min);
+      background: var(--color-backdrop);
+    }
+
+    @media (--tablet) {
+      --modal-pad-x: var(--size-5);
+
+      border-radius: var(--radius-md);
+      margin: auto;
+      inset: 0;
+      width: calc(100% - 2 * var(--size-3));
+      max-width: 609px;
+      height: fit-content;
+      max-height: calc(100dvh - 2 * var(--size-3));
+    }
+  }
+
+  /* #endregion */
+
+  /* -------------------------------------------------------------------------- */
+  /* #region: CHILDREN                                                          */
+  /* -------------------------------------------------------------------------- */
+
+  @scope (.modal) {
+    .modal-bg {
+      mask-image: linear-gradient(to bottom, #000, transparent);
+      object-fit: cover;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 240px;
+      z-index: -1;
+    }
+
+    .modal-close {
+      background: var(--color-bg-z1);
+      border: 0;
+      border-radius: var(--radius-pill);
+      color: var(--color-text);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      position: absolute;
+      top: var(--size-2);
+      right: var(--size-2);
+      width: var(--size-5);
+      height: var(--size-5);
+
+      @media (any-hover: hover) {
+        &:hover {
+          filter: var(--filter-brightness-up);
+        }
+      }
+    }
+
+    .modal-close svg {
+      width: var(--size-2h);
+      height: var(--size-2h);
+    }
+
+    .modal-title {
+      margin-bottom: var(--size-5);
+      text-align: center;
+    }
+
+    .modal-success {
+      display: grid;
+      justify-items: center;
+      gap: var(--size-2);
+      text-align: center;
+
+      &[hidden] {
+        display: none;
+      }
+    }
+
+    .modal-success-title {
+      font-family: var(--font-family-titles);
+      font-size: var(--font-size-h2);
+      line-height: var(--line-height-h2);
+    }
+
+    .modal-success p:not(.modal-success-title) {
+      color: var(--color-text-02);
+    }
+  }
+
+  /* #endregion */
+}
